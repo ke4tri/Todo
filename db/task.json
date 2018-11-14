@@ -1,0 +1,26 @@
+
+{
+  "tasks":{
+    "task1": {
+      "id": "task1",
+      "task": "Walk the dog",
+      "isCompleted": false
+    },
+    "task2": {
+      "id": "task2",
+      "task": "Take out trash",
+      "isCompleted": false
+    },
+    "task3": {
+      "id": "task3",
+      "task": "Feed the birds",
+      "isCompleted": false
+    },
+    "task4": {
+      "id": "task4",
+      "task": "Pay the bills",
+      "isCompleted": false
+    }
+
+  }
+}
