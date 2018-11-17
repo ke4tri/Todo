@@ -2,9 +2,7 @@ import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import getTasks from '../../helpers/dataGetter';
-// import googleImage from './googleLogin.png';
 import './auth.scss';
-
 
 const shootTask = () => {
   const domString = `
@@ -12,12 +10,9 @@ const shootTask = () => {
   Console Log</button>`;
   $('#buttonForTask').html(domString);
   $('#taskBut').on('click', () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider);
     getTasks();
   });
 };
-
 
 const loginButton = () => {
   const domString = `
