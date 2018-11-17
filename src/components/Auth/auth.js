@@ -5,13 +5,12 @@ import getTasks from '../../helpers/dataGetter';
 import './auth.scss';
 import checkLoginStatus from '../../helpers/authHelpers';
 
-
 const printTask = (dataArray) => {
   let domString = '';
   dataArray.forEach((data) => {
     domString += `
-    <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+    <div class="card mt-3" style="width: 18rem;">
+    <img class="card-img-top" src="${data.url}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Task number ${data.id}</h5>
       <p class="card-text">Task : ${data.task}</p>
@@ -23,21 +22,24 @@ const printTask = (dataArray) => {
   $('#taskPrint').append(domString);
 };
 
-
-const shootTask = () => {
-  const domString = `
-  <button id="taskBut" class="btn btn-secondary mt-5">
-  Console Log</button>`;
-  $('#buttonForTask').html(domString);
-  $('#taskBut').on('click', () => {
-    getTasks()
-      .then((data) => {
-        printTask(data);
-      }).catch((error) => {
-        console.error(error);
-      });
-  });
+const domTasks = () => {
+  getTasks()
+    .then((data) => {
+      printTask(data);
+    }).catch((error) => {
+      console.error(error);
+    });
 };
+
+// const shootTask = () => {
+//   const domString = `
+//   <button id="taskBut" class="btn btn-secondary mt-5">
+//   Console Log</button>`;
+//   $('#buttonForTask').html(domString);
+//   $('#taskBut').on('click', () => {
+//     // domTasks();
+//   });
+// };
 
 const loginButton = () => {
   const domString = `
@@ -48,7 +50,8 @@ const loginButton = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider);
     checkLoginStatus();
-    shootTask();
+    // shootTask();
+    domTasks();
   });
 };
 
