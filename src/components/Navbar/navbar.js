@@ -2,6 +2,7 @@ import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import './navbar.scss';
+import getTasks from '../../helpers/dataGetter';
 
 const navbarEvents = () => {
   $('.nav-link').on('click', (e) => {
@@ -10,6 +11,8 @@ const navbarEvents = () => {
         $('#auth').show();
         $('#friends').hide();
         $('#holidays').hide();
+        $('#navbar-button-holidays').hide();
+        $('#navbar-button-friends').hide();
       }).catch((err) => {
         console.error('you still logged in', err);
       });
@@ -56,6 +59,7 @@ const createNavbar = () => {
   `;
   $('#navbar').html(domString);
   navbarEvents();
+  getTasks();
 };
 
 export default createNavbar;

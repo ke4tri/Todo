@@ -3,6 +3,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import getTasks from '../../helpers/dataGetter';
 import './auth.scss';
+import checkLoginStatus from '../../helpers/authHelpers';
 
 const shootTask = () => {
   const domString = `
@@ -10,7 +11,12 @@ const shootTask = () => {
   Console Log</button>`;
   $('#buttonForTask').html(domString);
   $('#taskBut').on('click', () => {
-    getTasks();
+    getTasks()
+      .then((data) => {
+        displayTasks(data);
+      }).catch((error) => {
+        console.error(error);
+      });
   });
 };
 
@@ -22,6 +28,7 @@ const loginButton = () => {
   $('#google-auth').on('click', () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider);
+    checkLoginStatus();
     shootTask();
   });
 };
