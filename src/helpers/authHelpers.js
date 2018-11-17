@@ -6,20 +6,21 @@ const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       $('#friends').hide();
-      $('#holidays').show();
+      $('#tasks').show();
       $('#auth').hide();
       $('#navbar-button-auth').hide();
-      $('#navbar-button-holidays').show();
+      $('#navbar-button-tasks').show();
       $('#navbar-button-friends').show();
       $('#navbar-button-logout').show();
     } else {
       $('#friends').hide();
-      $('#holidays').hide();
+      $('#tasks').hide();
       $('#auth').show();
       $('#navbar-button-auth').show();
-      $('#navbar-button-holidays').hide();
+      $('#navbar-button-tasks').hide();
       $('#navbar-button-friends').hide();
       $('#navbar-button-logout').hide();
+      $('#google-auth').hide();
     }
   });
 };

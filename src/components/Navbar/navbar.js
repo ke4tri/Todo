@@ -2,29 +2,26 @@ import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import './navbar.scss';
+import getTasks from '../../helpers/dataGetter';
 
 const navbarEvents = () => {
   $('.nav-link').on('click', (e) => {
     if (e.target.id === 'navbar-button-logout') {
       firebase.auth().signOut().then(() => {
         $('#auth').show();
-        $('#friends').hide();
-        $('#holidays').hide();
+        $('#taskPrint').hide();
+        $('#tasks').hide();
+        $('#navbar-button-tasks').hide();
+        // $('#taskPrint').hide();
       }).catch((err) => {
         console.error('you still logged in', err);
       });
-    } else if (e.target.id === 'navbar-button-holidays') {
-      $('#auth').hide();
-      $('#friends').hide();
-      $('#holidays').show();
-    } else if (e.target.id === 'navbar-button-friends') {
-      $('#auth').hide();
-      $('#friends').show();
-      $('#holidays').hide();
     } else {
       $('#auth').show();
-      $('#friends').hide();
-      $('#holidays').hide();
+      $('#taskPrint').show();
+      $('#tasks').show();
+      $('#navbar-button-tasks').show();
+      // $('#taskPrint').hide();
     }
   });
 };
@@ -42,11 +39,8 @@ const createNavbar = () => {
             <a id="navbar-button-auth" class="nav-link">Authentication</a>
           </li>
           <li class="nav-item">
-            <a id="navbar-button-holidays" class="nav-link">Holidays</a>
-          </li>
-          <li class="nav-item">
-            <a id="navbar-button-friends" class="nav-link">Friends</a>
-          </li>
+            <a id="navbar-button-tasks" class="nav-link">TASKS</a>
+          </li
           <li class="nav-item">
             <a id="navbar-button-logout" class="nav-link">Logout</a>
           </li>
@@ -56,6 +50,7 @@ const createNavbar = () => {
   `;
   $('#navbar').html(domString);
   navbarEvents();
+  getTasks();
 };
 
 export default createNavbar;
