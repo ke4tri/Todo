@@ -1,4 +1,4 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 // import friendsData from '../../helpers/dataGetter';
 
 const formForTask = () => {
@@ -38,12 +38,10 @@ const formForTask = () => {
 //     });
 // };
 
-// const bindEvents = () => {
-//   $('#addBut2').on('click', addNewTask());
-//   $('#addBut').on(formForTask());
-// };
+const newLocationFunction = () => {
+  $('body').on('click', '#addButtons', () => { console.log('this is it'); });
+};
 
-// $('#addBut2').on('click', console.log('TESTTEST'));
 
 // export default bindEvents;
-export default formForTask;
+export default { formForTask, newLocationFunction };
