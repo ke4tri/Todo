@@ -12,6 +12,7 @@ const navbarEvents = () => {
         $('#taskPrint').hide();
         $('#tasks').hide();
         $('#navbar-button-tasks').hide();
+        $('#navbar-button-logout').show();
         // $('#taskPrint').hide();
       }).catch((err) => {
         console.error('you still logged in', err);
@@ -19,8 +20,9 @@ const navbarEvents = () => {
     } else {
       $('#auth').show();
       $('#taskPrint').show();
-      $('#tasks').show();
+      $('#tasks').hide();
       $('#navbar-button-tasks').show();
+      $('#navbar-button-logout').show();
       // $('#taskPrint').hide();
     }
   });
@@ -42,7 +44,7 @@ const createNavbar = () => {
             <a id="navbar-button-tasks" class="nav-link">TASKS</a>
           </li
           <li class="nav-item">
-            <a id="navbar-button-logout" class="nav-link">Logout</a>
+            <a id="navbar-button-logout" style="display: none" class="nav-link">Logout</a>
           </li>
         </ul>
       </div>

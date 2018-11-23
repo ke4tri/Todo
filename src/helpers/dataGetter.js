@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import axios from 'axios';
 
 import apiKeys from '../../db/apiKeys.json';
@@ -28,4 +29,11 @@ const getTasks = () => new Promise((resolve, reject) => {
     });
 });
 
+// this is whats used to actually push the string to firebase database
+// const addNewTask = allTasksObject => axios.post(`${baseUrl}/friends.json`, JSON.stringify(allTasksObject));
+
 export default getTasks;
+// export default {
+//   getTasks,
+//   addNewTask,
+// };

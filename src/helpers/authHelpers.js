@@ -12,6 +12,7 @@ const checkLoginStatus = () => {
       $('#navbar-button-tasks').show();
       $('#navbar-button-friends').show();
       $('#navbar-button-logout').show();
+      $('#addBut').show();
     } else {
       $('#friends').hide();
       $('#tasks').hide();
@@ -21,6 +22,7 @@ const checkLoginStatus = () => {
       $('#navbar-button-friends').hide();
       $('#navbar-button-logout').hide();
       $('#google-auth').hide();
+      $('#addBut').hide();
     }
   });
 };

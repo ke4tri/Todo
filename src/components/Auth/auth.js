@@ -10,13 +10,14 @@ const printTask = (dataArray) => {
   dataArray.forEach((data) => {
     domString += `
     <div class="card mt-3" style="width: 18rem;">
-    <img class="card-img-top" src="${data.url}" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Task number ${data.id}</h5>
-      <p class="card-text">Task : ${data.task}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+        <p class="card-text">${data.task}</p>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Completed</label>
+        </div>
     </div>
-  </div>
+</div>
     `;
   });
   $('#taskPrint').append(domString);
@@ -30,16 +31,6 @@ const domTasks = () => {
       console.error(error);
     });
 };
-
-// const shootTask = () => {
-//   const domString = `
-//   <button id="taskBut" class="btn btn-secondary mt-5">
-//   Console Log</button>`;
-//   $('#buttonForTask').html(domString);
-//   $('#taskBut').on('click', () => {
-//     // domTasks();
-//   });
-// };
 
 const loginButton = () => {
   const domString = `

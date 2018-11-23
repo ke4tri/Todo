@@ -10,7 +10,21 @@
   
   <div id='navbar'></div>
   <div id='auth'></div>
-  <div id='tasks'>TASKS</div>
+  <div id='addBut' style='display: none'>
+    <form>
+      <div class="form-row">
+      <div class="form-group">
+        <label  for="form-task-id"></label>
+        <input type="text" class="form-control" id="form-task-id" placeholder="Taskid">
+        <label for="form-task-complete"></label>
+        <input type="text" class="form-control" id="form-task-complete" placeholder="Task Complete true or false">
+        <label for="form-task-name"></label>
+        <input type="text" class="form-control" id="form-task-name" placeholder="Your Task">
+      </div>
+      <button id="addBut2" class="btn btn-primary">Add Task</button>
+    </form>
+  </div>
+  <div id='tasks'></div>
   <!-- <div id='buttonForTask'></div> -->
   <div id='taskPrint'></div>
 
