@@ -1,10 +1,11 @@
 import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import getTasks from '../../helpers/dataGetter';
+import getTasks2 from '../../helpers/dataGetter';
 import './auth.scss';
 import checkLoginStatus from '../../helpers/authHelpers';
-import formForTask from '../AddTask/addTask';
+// import formForTask from '../AddTask/addTask';
+// import bindEvents from '../AddTask/addTask';
 
 const printTask = (dataArray) => {
   let domString = '';
@@ -22,12 +23,12 @@ const printTask = (dataArray) => {
     `;
   });
   $('#taskPrint').append(domString);
+  // bindEvents();
 };
 
-$('#addBut').html(formForTask);
 
 const domTasks = () => {
-  getTasks()
+  getTasks2.getTasks()
     .then((data) => {
       printTask(data);
     }).catch((error) => {

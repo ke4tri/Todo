@@ -2,7 +2,7 @@ import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import './navbar.scss';
-import getTasks from '../../helpers/dataGetter';
+import getTasks2 from '../../helpers/dataGetter';
 
 const navbarEvents = () => {
   $('.nav-link').on('click', (e) => {
@@ -52,7 +52,7 @@ const createNavbar = () => {
   `;
   $('#navbar').html(domString);
   navbarEvents();
-  getTasks();
+  getTasks2.getTasks();
 };
 
 export default createNavbar;
