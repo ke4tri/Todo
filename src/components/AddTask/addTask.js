@@ -1,4 +1,6 @@
-import $ from 'jquery';
+/* eslint-disable max-len */
+// import $ from 'jquery';
+// import friendsData from '../../helpers/dataGetter';
 
 const formForTask = () => {
   const domString = `
@@ -13,24 +15,31 @@ const formForTask = () => {
     <input type="text" class="form-control" id="form-task-name" placeholder="Your Task">
   </div>
   <button id="addBut2" class="btn btn-primary">Add Task</button>
-</form>
+  </form>
   `;
   return domString;
 };
 
-const taskFromForm2 = () => {
-  const taskFromForm = {
-    id: $('#form-task-id').val(),
-    isCompleted: $('#form-task-complete').val(),
-    task: $('#form-task-name').val(),
-  };
-  return taskFromForm;
-};
+// const taskFromForm2 = () => {
+//   const taskFromForm = {
+//     id: $('#form-task-id').val(),
+//     isCompleted: $('#form-task-complete').val(),
+//     task: $('#form-task-name').val(),
+//   };
+//   return taskFromForm;
+// };
 
-const addNewTask = () => {
-  const newTask = taskFromForm2();
-  console.log(newTask);
-};
+// const addNewTask = () => {
+//   const newTask = taskFromForm2();
+//   friendsData.addNewTask(newTask)
+//     .then(() => {
+//       console.log('DataBase is updated?');
+//     })
+//     .catch((error) => {
+//       console.error('error', error);
+//     });
+// };
 
-$('#addBut2').on('click', addNewTask);
+// $('#addBut2').on('click', addNewTask());
+
 export default formForTask;
