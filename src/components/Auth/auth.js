@@ -27,12 +27,15 @@ const printTask = (dataArray) => {
   // the above prints the add form to dom
 };
 
+const newLocationFunction = () => {
+  $('body').on('click', '#addButtons', () => { console.log('this is it'); });
+};
 
 const domTasks = () => {
   getTasks2.getTasks()
     .then((data) => {
       printTask(data);
-      $('body').on('click', '#addButtons', console.log('testtest'));
+      newLocationFunction();
     })
     .catch((error) => {
       console.error('error in getting one friend', error);
