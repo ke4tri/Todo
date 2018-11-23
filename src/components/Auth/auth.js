@@ -4,6 +4,7 @@ import 'firebase/auth';
 import getTasks from '../../helpers/dataGetter';
 import './auth.scss';
 import checkLoginStatus from '../../helpers/authHelpers';
+import formForTask from '../AddTask/addTask';
 
 const printTask = (dataArray) => {
   let domString = '';
@@ -22,6 +23,8 @@ const printTask = (dataArray) => {
   });
   $('#taskPrint').append(domString);
 };
+
+$('#addBut').html(formForTask);
 
 const domTasks = () => {
   getTasks()
