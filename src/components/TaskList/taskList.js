@@ -1,14 +1,14 @@
-import createTaskCard from '../TaskCard/taskCard';
+// import createTaskCard from '../TaskCard/taskCard';
 
-import './taskList.scss';
+// import './taskList.scss';
 
-const createTaskList = (tasks) => {
-  let domString = '<ul class="player-list">';
-  tasks.forEach((task) => {
-    domString += createTaskCard(task);
-  });
-  domString += '</ul>';
-  return domString;
-};
+// const createTaskList = (tasks) => {
+//   let domString = '<ul class="player-list">';
+//   tasks.forEach((task) => {
+//     domString += createTaskCard(task);
+//   });
+//   domString += '</ul>';
+//   return domString;
+// };
 
-export default createTaskList;
+// export default createTaskList;

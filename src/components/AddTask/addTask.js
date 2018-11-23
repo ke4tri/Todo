@@ -3,7 +3,6 @@ import friendsData from '../../helpers/dataGetter';
 
 const formForTask = () => {
   const domString = `
-  <form>
   <div class="form-row">
   <div class="form-group">
     <label  for="form-task-id"></label>
@@ -12,9 +11,9 @@ const formForTask = () => {
     <input type="text" class="form-control" id="form-task-complete" placeholder="Task Complete true or false">
     <label for="form-task-name"></label>
     <input type="text" class="form-control" id="form-task-name" placeholder="Your Task">
+  <button id="addBut2" class="btn btn-primary addBut2">Add Task</button>
   </div>
-  <button id="addBut2" class="btn btn-primary">Add Task</button>
-  </form>
+  </div>
   `;
   return domString;
 };
@@ -44,9 +43,7 @@ const addNewTask = () => {
 //   $('#addBut').on(formForTask());
 // };
 
-$('#addBut2').on('click', addNewTask());
-$('#addBut').html(formForTask);
-
+$('.addBut2').on('click', console.log('TESTTEST'), addNewTask);
 
 // export default bindEvents;
-// export default { formForTask, bindEvents };
+export default formForTask;
