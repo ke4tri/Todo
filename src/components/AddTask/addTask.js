@@ -11,7 +11,7 @@ const formForTask = () => {
     <input type="text" class="form-control" id="form-task-complete" placeholder="Task Complete true or false">
     <label for="form-task-name"></label>
     <input type="text" class="form-control" id="form-task-name" placeholder="Your Task">
-  <button id="addButton" class="btn btn-primary">Add Task</button>
+  <button id="addButtons" class="btn btn-primary">Add Task</button>
   </div>
   </div>
   `;
