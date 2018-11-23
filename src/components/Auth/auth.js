@@ -8,9 +8,9 @@ import formForTask from '../AddTask/addTask';
 // import bindEvents from '../AddTask/addTask';
 
 const printTask = (dataArray) => {
-  let domString = '';
+  let domString2 = '';
   dataArray.forEach((data) => {
-    domString += `
+    domString2 += `
     <div class="card mt-3" style="width: 18rem;">
     <div class="card-body">
         <p class="card-text">${data.task}</p>
@@ -22,7 +22,7 @@ const printTask = (dataArray) => {
 </div>
     `;
   });
-  $('#taskPrint').append(domString);
+  $('#taskPrint').append(domString2);
   $('#addBut').html(formForTask());
   // the above prints the add form to dom
 };
@@ -32,8 +32,10 @@ const domTasks = () => {
   getTasks2.getTasks()
     .then((data) => {
       printTask(data);
-    }).catch((error) => {
-      console.error(error);
+      $('body').on('click', '#addButtons', console.log('testtest'));
+    })
+    .catch((error) => {
+      console.error('error in getting one friend', error);
     });
 };
 
