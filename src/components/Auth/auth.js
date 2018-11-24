@@ -13,14 +13,15 @@ const printTask = (dataArray) => {
   let domString2 = '';
   dataArray.forEach((data) => {
     domString2 += `
-    <div id="${data.id}"class="card mt-3 deleteThis" style="width: 18rem;">
+    <div id="${data.id}"class="card mt-3 deleteThis editThis" style="width: 18rem;">
     <div class="card-body">
         <p class="card-text">${data.task}</p>
         <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Completed</label>
             <button id="task-del-but"type="button" class="btn btn-danger">X</button>
-        </div>
+            <button id ="edit-task-but" type="button" class="btn">EDIT</button>
+            </div>
     </div>
 </div>
     `;

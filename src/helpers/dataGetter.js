@@ -28,12 +28,31 @@ const getTasks = () => new Promise((resolve, reject) => {
     });
 });
 
+// PULLS THE SINGLE TASK NEEDING EDITED
+const getSingleTask = taskId => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/tasks/${taskId}.json`)
+    .then((result) => {
+      const singleTask = result.data;
+      singleTask.id = taskId;
+      resolve(singleTask);
+    })
+    .catch((error) => {
+      reject(error);
+    });
+});
+
+
 const addNewAxios = randomName => axios.post(`${baseUrl}/tasks.json`, JSON.stringify(randomName));
 
 const deleteTask = taskId => axios.delete(`${baseUrl}/tasks/${taskId}.json`);
+
+const updateTask = (friendsObject, taskId) => axios.put(`${baseUrl}/tasks/${taskId}.json`, JSON.stringify(friendsObject));
+
 
 export default {
   getTasks,
   addNewAxios,
   deleteTask,
+  updateTask,
+  getSingleTask,
 };
