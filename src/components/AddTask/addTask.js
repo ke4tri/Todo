@@ -1,14 +1,10 @@
+/* eslint-disable import/no-duplicates */
 /* eslint-disable import/no-cycle */
 /* eslint-disable max-len */
 import $ from 'jquery';
-// import axios from 'axios';
-// import apiKeys from '../../../db/apiKeys.json';
-// import friendsData from '../../helpers/dataGetter';
-// import { resolve } from 'dns';
 import addNewAxios2 from '../../helpers/dataGetter';
+import deleteTask2 from '../../helpers/dataGetter';
 import domTasks2 from '../Auth/auth';
-
-// const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
 
 const formForTask = () => {
   const domString = `
@@ -36,9 +32,6 @@ const taskFromForm2 = () => {
   return taskFromForm;
 };
 
-// const addNewAxios = friendsObject => axios.post(`${firebaseUrl}/tasks.json`, JSON.stringify(friendsObject));
-
-
 const addNewTask = () => {
   const newTask = taskFromForm2();
   addNewAxios2.addNewAxios(newTask)
@@ -51,9 +44,22 @@ const addNewTask = () => {
     });
 };
 
-const newLocationFunction = () => {
-  $('body').on('click', '#addButtons', () => { addNewTask(); });
+const deleteTask = (idToDelete) => {
+  deleteTask2.deleteTask(idToDelete)
+    .then(() => {
+      console.log('Delete button is wokring');
+      domTasks2.domTasks();
+    })
+    .catch((error) => {
+      console.error('error in deleting task', error);
+    });
 };
 
-// export default bindEvents;
+const newLocationFunction = () => {
+  $('body').on('click', '#addButtons', () => { addNewTask(); });
+  // $('body').on('click', '#task-del-but', () => { deleteTask(); });
+  $('body').on('click', '#task-del-but', (e) => { const idNeeded = $(e.target).closest('.deleteThis'); const idNeeded2 = idNeeded[0].id; deleteTask(idNeeded2); });
+};
+
+
 export default { formForTask, newLocationFunction };
