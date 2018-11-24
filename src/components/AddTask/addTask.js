@@ -4,7 +4,8 @@
 import $ from 'jquery';
 import addNewAxios2 from '../../helpers/dataGetter';
 import deleteTask2 from '../../helpers/dataGetter';
-import domTasks2 from '../Auth/auth';
+import printTaskSecond2 from '../Auth/auth';
+// import domTasks2 from '../Auth/auth';
 
 const formForTask = () => {
   const domString = `
@@ -37,7 +38,8 @@ const addNewTask = () => {
   addNewAxios2.addNewAxios(newTask)
     .then(() => {
       console.log('DataBase is updated?', newTask);
-      domTasks2.domTasks();
+      printTaskSecond2.printTaskSecond();
+      // domTasks2.domTasks();
     })
     .catch((error) => {
       console.error('error', error);
@@ -48,7 +50,8 @@ const deleteTask = (idToDelete) => {
   deleteTask2.deleteTask(idToDelete)
     .then(() => {
       console.log('Delete button is wokring');
-      domTasks2.domTasks();
+      printTaskSecond2.printTaskSecond();
+      // domTasks2.domTasks();
     })
     .catch((error) => {
       console.error('error in deleting task', error);

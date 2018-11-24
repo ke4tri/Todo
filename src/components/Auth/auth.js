@@ -30,6 +30,15 @@ const printTask = (dataArray) => {
   // the above prints the add form to dom
 };
 
+const printTaskSecond = () => {
+  getTasks2.getTasks()
+    .then((data) => {
+      printTask(data);
+    })
+    .catch((error) => {
+      console.error('error in getting one friend', error);
+    });
+};
 
 const domTasks = () => {
   getTasks2.getTasks()
@@ -56,4 +65,4 @@ const loginButton = () => {
   });
 };
 
-export default { loginButton, domTasks };
+export default { loginButton, domTasks, printTaskSecond };
