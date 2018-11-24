@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/no-duplicates */
 import $ from 'jquery';
 import firebase from 'firebase/app';
@@ -23,7 +24,7 @@ const printTask = (dataArray) => {
 </div>
     `;
   });
-  $('#taskPrint').append(domString2);
+  $('#taskPrint').html(domString2);
   $('#addBut').html(formForTask2.formForTask());
   // the above prints the add form to dom
 };
@@ -54,4 +55,4 @@ const loginButton = () => {
   });
 };
 
-export default loginButton;
+export default { loginButton, domTasks };
