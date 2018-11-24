@@ -91,27 +91,28 @@ const editTask = (idToEdit) => {
 };
 
 // FUNC TO UPDATE
-// const updateTask = () => {
-//   const updatedTask = taskFromForm2 ();
-//   const friendId = e.target.dataset.singleEditId;
-//   fromGetter.updateTask(updatedFriend, friendId)
-//     .then(() => {
-//       $('#add-edit-task').html('').hide();
-//       $('#single-container').html('');
-//       $('#task').show();
-//       printTaskSecond2.printTaskSecond();
-//     })
-//     .catch((error) => {
-//       console.error('error', error);
-//     });
-// };
+const updateTask = (taskId) => {
+  const updatedTask = taskFromForm2();
+  // const friendId = e.target.dataset.singleEditId;
+  fromGetter.updateTask(updatedTask, taskId)
+    .then(() => {
+      $('#add-edit-task').html('').hide();
+      // $('#single-container').html('');
+      $('.form-row').show();
+      printTaskSecond2.printTaskSecond();
+    })
+    .catch((error) => {
+      console.error('error', error);
+    });
+};
 
 const newLocationFunction = () => {
   $('body').on('click', '#addButtons', () => { addNewTask(); });
   // $('body').on('click', '#task-del-but', () => { deleteTask(); });
   $('body').on('click', '#task-del-but', (e) => { const idNeeded = $(e.target).closest('.deleteThis'); const idNeeded2 = idNeeded[0].id; deleteTask(idNeeded2); });
   $('body').on('click', '#edit-task-but', (e) => { const idNeeded = $(e.target).closest('.editThis'); const idNeeded2 = idNeeded[0].id; editTask(idNeeded2); });
-  $('body').on('click', '#save-edit-task', (e) => { const idNeeded = $(e.target).closest('.editThis'); const idNeeded2 = idNeeded[0].id; editTask(idNeeded2); });
+  // $('body').on('click', '#save-edit-task', (e) => { const idNeeded = $(e.target).closest('.editThis'); const idNeeded2 = idNeeded[0].id; editTask(idNeeded2); });
+  $('body').on('click', '#save-edit-task', () => { const idNeeded = $('#save-edit-task').data('single-edit-id'); updateTask(idNeeded); });
 };
 
 export default { formForTask, newLocationFunction };

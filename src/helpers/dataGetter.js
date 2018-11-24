@@ -46,7 +46,7 @@ const addNewAxios = randomName => axios.post(`${baseUrl}/tasks.json`, JSON.strin
 
 const deleteTask = taskId => axios.delete(`${baseUrl}/tasks/${taskId}.json`);
 
-const updateTask = (friendsObject, taskId) => axios.put(`${baseUrl}/friends/${taskId}.json`, JSON.stringify(friendsObject));
+const updateTask = (friendsObject, taskId) => axios.put(`${baseUrl}/tasks/${taskId}.json`, JSON.stringify(friendsObject));
 
 
 export default {
