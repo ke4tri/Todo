@@ -1,11 +1,13 @@
+/* eslint-disable import/no-cycle */
+/* eslint-disable import/no-duplicates */
 import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import getTasks2 from '../../helpers/dataGetter';
 import './auth.scss';
 import checkLoginStatus from '../../helpers/authHelpers';
-import formForTask from '../AddTask/addTask';
-// import bindEvents from '../AddTask/addTask';
+import formForTask2 from '../AddTask/addTask';
+import newLocationFunction2 from '../AddTask/addTask';
 
 const printTask = (dataArray) => {
   let domString2 = '';
@@ -22,20 +24,17 @@ const printTask = (dataArray) => {
 </div>
     `;
   });
-  $('#taskPrint').append(domString2);
-  $('#addBut').html(formForTask());
+  $('#taskPrint').html(domString2);
+  $('#addBut').html(formForTask2.formForTask());
   // the above prints the add form to dom
 };
 
-const newLocationFunction = () => {
-  $('body').on('click', '#addButtons', () => { console.log('this is it'); });
-};
 
 const domTasks = () => {
   getTasks2.getTasks()
     .then((data) => {
       printTask(data);
-      newLocationFunction();
+      newLocationFunction2.newLocationFunction();
     })
     .catch((error) => {
       console.error('error in getting one friend', error);
@@ -56,4 +55,4 @@ const loginButton = () => {
   });
 };
 
-export default loginButton;
+export default { loginButton, domTasks };

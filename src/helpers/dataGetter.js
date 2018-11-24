@@ -29,7 +29,7 @@ const getTasks = () => new Promise((resolve, reject) => {
     });
 });
 
-const addNewTask = taskFromForm2 => axios.post(`${baseUrl}/friends.json`, JSON.stringify(taskFromForm2));
+const addNewAxios = randomName => axios.post(`${baseUrl}/tasks.json`, JSON.stringify(randomName));
 
 // this is whats used to actually push the string to firebase database
 // const addNewTask = allTasksObject => axios.post(`${baseUrl}/friends.json`, JSON.stringify(allTasksObject));
@@ -37,5 +37,5 @@ const addNewTask = taskFromForm2 => axios.post(`${baseUrl}/friends.json`, JSON.s
 // export default getTasks;
 export default {
   getTasks,
-  addNewTask,
+  addNewAxios,
 };
