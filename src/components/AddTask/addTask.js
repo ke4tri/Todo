@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable import/no-duplicates */
 /* eslint-disable import/no-cycle */
 /* eslint-disable max-len */
@@ -93,7 +94,6 @@ const updateTask = (taskId) => {
   fromGetter.updateTask(updatedTask, taskId)
     .then(() => {
       $('#add-edit-task').html('').hide();
-      // $('#single-container').html('');
       $('.form-row').show();
       printTaskSecond2.printTaskSecond();
     })
@@ -104,7 +104,6 @@ const updateTask = (taskId) => {
 
 const newLocationFunction = () => {
   $('body').on('click', '#addButtons', () => { addNewTask(); });
-  // $('body').on('click', '#task-del-but', () => { deleteTask(); });
   $('body').on('click', '#task-del-but', (e) => { const idNeeded = $(e.target).closest('.deleteThis'); const idNeeded2 = idNeeded[0].id; deleteTask(idNeeded2); });
   $('body').on('click', '#edit-task-but', (e) => { const idNeeded = $(e.target).closest('.editThis'); const idNeeded2 = idNeeded[0].id; editTask(idNeeded2); });
   $('body').on('click', '#save-edit-task', () => { const idNeeded = $('#save-edit-task').data('single-edit-id'); updateTask(idNeeded); });
