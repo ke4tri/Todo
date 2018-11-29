@@ -16,12 +16,9 @@ const getTasks = () => new Promise((resolve, reject) => {
           const newTask = allTasksObject[taskId];
           newTask.id = taskId;
           allTasksArray.push(newTask);
-          console.log('DATA HERE');
         });
       }
-      console.log('array?', allTasksArray);
       resolve(allTasksArray);
-      console.log(result);
     })
     .catch((err) => {
       reject(err);

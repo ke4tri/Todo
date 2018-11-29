@@ -4,3 +4,28 @@
 body {
   background-color:$brown;
 }
+
+#wrapper2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row2 {
+  display: fles;
+  flex-direction: column;
+}
+
+.form-row {
+  display: fles;
+  flex-direction: column;
+}
+
+#task-print {
+  display: flex;
+  justify-content: center;
+}

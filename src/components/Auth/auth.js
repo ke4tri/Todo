@@ -61,7 +61,6 @@ const loginButton = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider);
     checkLoginStatus();
-    // shootTask();
     domTasks();
   });
 };

@@ -3,17 +3,13 @@
 /* eslint-disable max-len */
 import $ from 'jquery';
 import fromGetter from '../../helpers/dataGetter';
-// import fromGetter from '../../helpers/dataGetter';
 import printTaskSecond2 from '../Auth/auth';
-// import domTasks2 from '../Auth/auth';
 
 const formForTask = () => {
   const domString = `
   <div class="form-row">
   <div class="form-group">
     <label  for="form-task-id"></label>
-    <input type="text" class="form-control" id="form-task-id" placeholder="Taskid">
-    <label for="form-task-complete"></label>
     <input type="text" class="form-control" id="form-task-complete" placeholder="Task Complete true or false">
     <label for="form-task-name"></label>
     <input type="text" class="form-control" id="form-task-name" placeholder="Your Task">
@@ -111,7 +107,6 @@ const newLocationFunction = () => {
   // $('body').on('click', '#task-del-but', () => { deleteTask(); });
   $('body').on('click', '#task-del-but', (e) => { const idNeeded = $(e.target).closest('.deleteThis'); const idNeeded2 = idNeeded[0].id; deleteTask(idNeeded2); });
   $('body').on('click', '#edit-task-but', (e) => { const idNeeded = $(e.target).closest('.editThis'); const idNeeded2 = idNeeded[0].id; editTask(idNeeded2); });
-  // $('body').on('click', '#save-edit-task', (e) => { const idNeeded = $(e.target).closest('.editThis'); const idNeeded2 = idNeeded[0].id; editTask(idNeeded2); });
   $('body').on('click', '#save-edit-task', () => { const idNeeded = $('#save-edit-task').data('single-edit-id'); updateTask(idNeeded); });
 };
 
