@@ -10,9 +10,7 @@ const formForTask = () => {
   const domString = `
   <div class="form-row">
   <div class="form-group">
-    <label  for="form-task-id"></label>
-    <input type="text" class="form-control" id="form-task-complete" placeholder="Task Complete true or false">
-    <label for="form-task-name"></label>
+    <input type="text" class="form-control" id="form-task-complete" placeholder="Complete - true/false">
     <input type="text" class="form-control" id="form-task-name" placeholder="Your Task">
   <button id="addButtons" class="btn btn-primary">Add Task</button>
   </div>

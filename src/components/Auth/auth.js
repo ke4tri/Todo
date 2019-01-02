@@ -8,6 +8,7 @@ import './auth.scss';
 import checkLoginStatus from '../../helpers/authHelpers';
 import formForTask2 from '../AddTask/addTask';
 import newLocationFunction2 from '../AddTask/addTask';
+import googleImage from '../../img/googleLogin.png';
 
 const printTask = (dataArray) => {
   let domString2 = '';
@@ -54,8 +55,9 @@ const domTasks = () => {
 
 const loginButton = () => {
   const domString = `
-  <button id="google-auth" class="btn btn-secondary mt-5">
-  LogIn</button>`;
+  <button id="google-auth" class="btn btn-secondary">
+      <img src="${googleImage}"/>
+    </button>`;
   $('#auth').html(domString);
   $('#google-auth').on('click', () => {
     const provider = new firebase.auth.GoogleAuthProvider();
